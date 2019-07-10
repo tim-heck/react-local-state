@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HistoryItem from '../HistoryItem/HistoryItem';
 
 class HistoryComponent extends Component {
 
@@ -20,7 +21,8 @@ class HistoryComponent extends Component {
                 {/* another way */}
                 <ul>
                     {this.props.history.map((item, i) =>
-                        <li key={i}>{item.user}: {item.message}</li>
+                        <HistoryItem item={item} key={i}/>
+                        // <li key={i}>{item.user}: {item.message}</li>
                     )}
                 </ul>
             </div>

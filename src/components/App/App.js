@@ -64,17 +64,6 @@ class App extends Component {
     });
   }
 
-  renderMessage = () => {
-    let stuffToShow = '';
-    if (this.state.history.length > 0) {
-      let lastThingFromHistory = this.state.history[this.state.history.length - 1];
-      stuffToShow = <p>{lastThingFromHistory.user}:{lastThingFromHistory.message}</p>
-    }
-    return (
-      stuffToShow
-    );
-  }
-
   // Render is called everything the component is updated
   render() {
     // console.log('in render: current state', this.state);
@@ -86,7 +75,8 @@ class App extends Component {
             handleSubmit={this.handleSubmit}
             newMessage={this.state.newMessage} />
           {JSON.stringify(this.state)}
-          <RenderComponent renderMessage={this.renderMessage} />
+          {/* <RenderComponent renderMessage={this.renderMessage} /> */}
+          <RenderComponent history={this.state.history} />
           <HistoryComponent history={this.state.history} />
         </main>
       </div>
